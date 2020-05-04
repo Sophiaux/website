@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,400|Playfair+Display:400,700&display=swap');
+
+@import"variables";
+@import"mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 100%/1.4 $mainfont, $font, Arial, sans-serif;
+    background: white;
+}
+
+.yellow {
+    color: $geel;
+}
+
+h2 {
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 100%;
+}
+
+.hero {
+    background: url('../img/bg.jpg') no-repeat center/cover;
+    width: 100%;
+    height: 100vh;
+
+    .overlay {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, .8);
+
+        .banner {
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            padding: 20px 30px;
+            background-color: $donkergrijstransparant;
+            // @include flex (row, space-between, center);
+
+            .logo {
+                height: auto;
+                width: 100%;
+                max-width: 150px;
+            }
+
+            .burger {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                cursor: pointer;
+
+                .line {
+                    width: 40px;
+                    height: 2px;
+                    background-color: white;
+                    position: relative;
+                    right: 0;
+                    transition: all 0.3s;
+
+                    &:nth-of-type(1) {
+                        position: absolute;
+                        top: 8px;
+                        transform: translateY(10px) rotate(45deg);
+                    }
+
+                    &:nth-of-type(2) {
+                        position: absolute;
+                        top: 18px;
+                        opacity: 0;
+                    }
+
+                    &:nth-of-type(3) {
+                        position: absolute;
+                        top: 28px;
+                        transform: translateY(-10px) rotate(-45deg);
+                    }
+                }
+            }
+
+            .menuVerborgen {
+
+
+                ul {
+                    display: none;
+                }
+
+                .line:nth-of-type(1) {
+                    transform: translateY(0) rotate(0);
+                }
+
+                .line:nth-of-type(2) {
+                    opacity: 1;
+                }
+
+                .line:nth-of-type(3) {
+                    transform: translateY(0) rotate(0);
+                }
+            }
+
+
+        }
+
+
+        .hero-text {
+            padding: 1rem;
+            @include flex (column, center, center);
+            width: 100%;
+            height: 100vh;
+
+            p {
+                color: $wit;
+                font: 700 2rem $mainfont;
+                text-align: center;
+                text-shadow: 1px 2px 4px $zwart;
+                letter-spacing: 2px;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100px;
+                    height: 2px;
+                    background-color: $geel;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+            }
+
+
+            span {
+                color: $geel;
+            }
+
+            a {
+                font-size: 1rem;
+                text-decoration: none;
+                color: $wit;
+                font-family: $font;
+                text-transform: uppercase;
+                background-color: $geel;
+                padding: 10px 20px;
+                margin-top: 20px;
+                border-radius: 10px;
+                border: 1px solid $geel;
+                text-shadow: 1px 2px 4px $donkergrijs;
+                transition: all 0.5s;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, .4);
+                    // border: 1px solid $geel;
+                }
+            }
+        }
+    }
+}
+
+#about {
+    @include padding;
+    background-color: $wit;
+    min-height: 100vh;
+    width: 100%;
+    color: $donkergrijs;
+    font-family: $font;
+}
+
+#team {
+    @include padding;
+    min-height: 100vh;
+    width: 100%;
+    background-color: $donkergrijs;
+    font-family: $font;
+    color: $wit;
+}
+
+#contact {
+    @include padding;
+    min-height: 100vh;
+    width: 100%;
+    font-family: $font;
+    background-color: $wit;
+    color: $donkergrijs;
+
+}
+
+@import"screen";

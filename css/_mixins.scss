@@ -1,0 +1,10 @@
+@mixin flex ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin padding {
+    padding: 110px 30px 30px 30px;
+}
