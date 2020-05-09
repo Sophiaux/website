@@ -1,0 +1,44 @@
+@media screen and(min-width: 640px) {
+    #team {
+        .gallery {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media screen and(min-width: 992px) {
+
+    #about {
+        @include paddingLarge;
+    }
+
+    #team {
+        @include paddingLarge;
+
+        .gallery {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    #contact {
+        @include paddingLarge;
+    }
+}
+
+@media screen and(min-width: 1200px) {
+    #about {
+        @include paddingXLarge;
+    }
+
+    #team {
+        @include paddingXLarge;
+
+        .gallery {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    #contact {
+        @include paddingXLarge;
+    }
+}

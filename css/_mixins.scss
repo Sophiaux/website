@@ -8,3 +8,11 @@
 @mixin padding {
     padding: 110px 30px 30px 30px;
 }
+
+@mixin paddingLarge {
+    padding: 110px 60px 60px 60px;
+}
+
+@mixin paddingXLarge {
+    padding: 110px 110px 110px 110px;
+}

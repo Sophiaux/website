@@ -21,6 +21,7 @@ body {
 h2 {
     font-size: 1.6rem;
     padding-bottom: 20px;
+    font-family: $font;
 }
 
 p {
@@ -119,7 +120,7 @@ p {
             width: 100%;
             height: 100vh;
 
-            p {
+            h1 {
                 color: $wit;
                 font: 700 2rem $mainfont;
                 text-align: center;
@@ -182,7 +183,86 @@ p {
     background-color: $donkergrijs;
     font-family: $font;
     color: $wit;
+
+    .team-p {
+        padding-bottom: 40px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5em;
+
+        .gallery-item {
+            background-color: $zwart;
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            cursor: pointer;
+
+            box-shadow:
+                inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                0 0 0 2px $zwart,
+                0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+
+
+            &:hover {
+                transform: scale(1.05);
+                transition: all 0.5s;
+                background-color: $geel;
+
+                h4 {
+                    color: $wit;
+                }
+            }
+
+
+
+            h3,
+            h4 {
+                margin: 0 auto;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: $font;
+            }
+
+            h3 {
+                color: $wit;
+                font-size: 1rem;
+                letter-spacing: 3px;
+            }
+
+            h4 {
+                color: $lichtgrijs;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                padding-bottom: 10px;
+            }
+
+            .gallery-img {
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+                padding: 20px;
+                // display: block;
+            }
+        }
+    }
 }
+
+// .overlay {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     height: 100%;
+//     width: 100%;
+//     background-color: #008CBA;
+// }
+
 
 #contact {
     @include padding;
