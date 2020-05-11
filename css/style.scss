@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -47,11 +48,13 @@ p {
             padding: 20px 30px;
             background-color: $donkergrijstransparant;
             // @include flex (row, space-between, center);
+            z-index: 100;
 
             .logo {
                 height: auto;
                 width: 100%;
                 max-width: 150px;
+
             }
 
             .burger {
@@ -184,6 +187,7 @@ p {
     font-family: $font;
     color: $wit;
 
+
     .team-p {
         padding-bottom: 40px;
     }
@@ -194,12 +198,15 @@ p {
         gap: 2.5em;
 
         .gallery-item {
-            background-color: $zwart;
+            background-color: rgb(30, 29, 29);
+            background-color: linear-gradient(0deg, rgba(30, 29, 29, 1) 0%, rgba(32, 32, 32, 1) 31%, rgba(34, 34, 34, 1) 100%);
             border-radius: 10px;
             width: 100%;
             height: auto;
             padding: 20px;
             cursor: pointer;
+            position: relative;
+            z-index: 10;
 
             box-shadow:
                 inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -216,9 +223,8 @@ p {
                 h4 {
                     color: $wit;
                 }
+
             }
-
-
 
             h3,
             h4 {
@@ -232,6 +238,7 @@ p {
                 color: $wit;
                 font-size: 1rem;
                 letter-spacing: 3px;
+                padding-top: 20px;
             }
 
             h4 {
@@ -239,29 +246,57 @@ p {
                 font-size: 0.8rem;
                 letter-spacing: 1px;
                 padding-bottom: 10px;
+
             }
 
             .gallery-img {
                 width: 100%;
                 height: auto;
                 border-radius: 50%;
-                padding: 20px;
-                // display: block;
+                display: block;
             }
         }
     }
+
+
+
+    .overlay {
+        position: relative;
+        width: auto;
+        height: auto;
+        border-radius: 50%;
+        margin: 20px;
+    }
+
+    .overlay .overlay-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        color: #FFF;
+        border-radius: 50%;
+        font-family: $font;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    .gallery-item:hover .overlay-text {
+        display: block;
+        background-color: $donkergrijstransparant;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cv {
+        width: 100%;
+        height: 100%;
+    }
 }
 
-// .overlay {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     height: 100%;
-//     width: 100%;
-//     background-color: #008CBA;
-// }
+
 
 
 #contact {
